@@ -11,9 +11,11 @@ import React from "react"
 import ReactDom from "react-dom"
 
 function MyInfo(){
+  const firstName = "Shiv"
+  const lastName= "Bade"
   return (
      <div>
-     <h1>Shiv</h1>
+     <h1>{`${firstName} ${lastName}`}</h1>
      <p>Just another developer trying hands on React.</p>
      <ul>
         <li>Swiss</li>

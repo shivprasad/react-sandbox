@@ -1,13 +1,14 @@
 import React from "react"
 import TodoItem from "./TodoItem"
+import todoData from "./Todos"
 
 function App() {
+    const data = todoData.map( t => (
+      <TodoItem key={t.id} item={t} />
+    ))
     return (
       <div className="todo-list">
-        <TodoItem task="First Task"/>
-        <TodoItem task="Second Task"/>
-        <TodoItem task="Third Task"/>
-        <TodoItem task="Fourth Task"/>
+        {data}
       </div>  
     );
     

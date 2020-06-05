@@ -1,14 +1,16 @@
 import React from "react"
 import Joke from "./Joke"
+import jokes from "./JokesData"
 
 function App(){
+
+    const comp = jokes.map(function(j){
+        return (<Joke question={j.question} punchLine={j.punchLine}/>)
+    }) 
+
     return (
         <div>
-            <Joke punchLine="Who is there?"/>
-            <Joke question="Knock knock..??" punchLine="Who is there?"/>
-            <Joke question="Knock knock..??" punchLine="Who is there?"/>
-            <Joke question="Knock knock..??" punchLine="Who is there?"/>
-            <Joke question="Knock knock..??" punchLine="Who is there?"/>
+            {comp}
         </div>
     )
 }

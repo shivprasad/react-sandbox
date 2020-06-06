@@ -2,8 +2,17 @@ import React from "react"
 import TodoItem from "./TodoItem"
 import todoData from "./Todos"
 
-function App() {
-    const data = todoData.map( t => (
+class App extends React.Component {
+
+  constructor(){
+    super()
+    this.state = {
+      todos : todoData
+    }
+  }
+
+  render() {
+    const data = this.state.todos.map( t => (
       <TodoItem key={t.id} item={t} />
     ))
     return (
@@ -13,5 +22,9 @@ function App() {
     );
     
 }
+
+
+}
+
 
 export default App

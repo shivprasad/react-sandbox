@@ -8,21 +8,14 @@ class App extends React.Component {
     this.state = {
       isLoggedIn: true
     }
-    this.logout = this.logout.bind(this)
-    this.login = this.login.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
-  logout(){
-    console.log("Logout")
-    this.setState({
-      isLoggedIn : false
-    })
-  }
-
-  login(){
-    console.log("Login")
-    this.setState({
-      isLoggedIn : true
+  handleClick(){
+    this.setState((prevState) => {
+      return {
+        isLoggedIn : !prevState.isLoggedIn
+      }
     })
   }
 
@@ -37,7 +30,7 @@ class App extends React.Component {
 
             </div>
             <div>
-              <LogInOutButton isLoggedIn={this.state.isLoggedIn} onClickHandler={this.state.isLoggedIn ? this.logout : this.login}/> 
+              <LogInOutButton isLoggedIn={this.state.isLoggedIn} onClickHandler={this.handleClick}/> 
             </div>
         </div>
     )

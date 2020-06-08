@@ -21,6 +21,11 @@ class MyInfo extends Component {
         // https://reactjs.org/docs/react-component.html#getsnapshotbeforeupdate
         console.log("getSnapshotBeforeUpdate")
     }
+
+    componentDidUpdate(){
+      console.log("componentDidUpdate")
+    }
+
     
     // componentWillMount() {
         

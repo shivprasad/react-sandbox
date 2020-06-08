@@ -10,7 +10,7 @@ class ToDoItem extends React.Component {
         return (
             <div className="todo-item">
                 <input type="checkbox" checked={this.props.item.completed} onChange={()=>{ this.props.handleChange(this.props.item.id) }} />
-                <p>{this.props.item.task}</p>
+                <p className={this.props.item.completed ? "completed" : "pending"}>{this.props.item.task}</p>
             </div>
         )
     }

@@ -2,16 +2,11 @@ import React from "react"
 
 class MemeGenerator extends React.Component {
 
-    constructor(){
-        super()
-        this.state = {
-            topText : "",
-            bottomText : "",
-            url : "http://i.imgflip.com/1bij.jpg",
-            allMemeImgs :[]
-        }
-        this.generate = this.generate.bind(this)
-        this.handleChange = this.handleChange.bind(this)
+    state = {
+        topText : "",
+        bottomText : "",
+        url : "http://i.imgflip.com/1bij.jpg",
+        allMemeImgs :[]
     }
 
     componentDidMount(){
@@ -25,7 +20,7 @@ class MemeGenerator extends React.Component {
         })
     }
 
-    generate(event){
+    generate = (event) => {
         event.preventDefault()
         this.setState((prevState) =>{
             return {
@@ -34,7 +29,7 @@ class MemeGenerator extends React.Component {
         })
     }
 
-    handleChange(event){
+    handleChange = (event) => {
         const {name, value} = event.target
         this.setState({
             [name] : value
